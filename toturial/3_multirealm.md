@@ -27,6 +27,8 @@ CharacterDatabaseInfo = "ac-database;3306;root;password;acore_characters2"
 3. 找到 `realmlist` 表，添加一行，内容如下：
 ```sql
 INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`) VALUES (2, '曼多基尔', '192.168.0.106', '127.0.0.1', '255.255.255.0', 8086, 0, 0, 1, 0, 0, 12340);
+
+INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`) VALUES (3, '水晶之刺', '192.168.0.106', '127.0.0.1', '255.255.255.0', 8087, 0, 0, 1, 0, 0, 12340);
 ```
 
 如果用的 HeidiSQL，也可以直接在1那条记录上右击，选择“带键值地复制行”，然后修改下以下内容即可：
