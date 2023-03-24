@@ -43,3 +43,8 @@ INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMa
 docker compose down
 docker compose up -d
 ```
+
+参考文档：
+* [How to create a second multirealm environment](https://www.azerothcore.org/acore-docker/)
+
+[返回目录](../README.md)

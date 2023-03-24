@@ -27,7 +27,11 @@ IP 地址根据需要可以填以下值：
 * 认证服务器：3724
 * 世界服务器：8085
 
-官方文档：https://www.azerothcore.org/wiki/networking
 
 ## 客户端
 修改 `Data/zh-TW/realmlist.wtf` 文件，把IP改为外网IP。
+
+参考文档：
+* [networking](https://www.azerothcore.org/wiki/networking)
+
+[返回目录](../README.md)

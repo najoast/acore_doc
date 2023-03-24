@@ -33,3 +33,8 @@ account create {user} {password} {confirm password}
 3. 官方网站：https://www.azerothcore.org
 4. 文档齐全，容易上手：https://www.azerothcore.org/wiki/getting-started
 5. 支持 Eluna Lua 引擎，方便拓展新功能：https://github.com/azerothcore/mod-eluna
+
+参考文档：
+* [ACore docker compose](https://www.azerothcore.org/acore-docker/)
+
+[返回目录](../README.md)
