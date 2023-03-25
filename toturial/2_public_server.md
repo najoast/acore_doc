@@ -40,5 +40,6 @@ IP 地址根据需要可以填以下值：
 
 参考文档：
 * [networking](https://www.azerothcore.org/wiki/networking)
+* [Customize your server with the database](https://www.azerothcore.org/acore-docker/#customize-your-server-with-the-database)
 
 [返回目录](../README.md)
