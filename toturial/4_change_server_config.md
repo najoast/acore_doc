@@ -32,5 +32,10 @@ services:
 中文文档：
 * [worldserver.conf](../doc/worldserver.conf.md)
 
-# 4 重启服务器
-在 Docker Desktop 里点 restart。
+# 4 删除旧容器，重新启动新容器
+1. 进到 `acore-docker` 目录
+2. 执行以下命令
+```
+docker compose down
+docker compose up -d
+```
