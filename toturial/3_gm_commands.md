@@ -19,7 +19,7 @@ docker attach acore-docker-ac-worldserver-1
 * GM等级填上面那张表里的值
 * 服务器ID是数据库里 realmlist 里的 ID，填-1表示所有服务器
 ```
-account set gmlevel ${账号名} ${$GM等级} ${服务器ID}
+account set gmlevel ${账号名} ${GM等级} ${服务器ID}
 ```
 
 # 最高安全等级
@@ -49,11 +49,14 @@ GM命令主要可以通过两种方式输入。 要么直接在世界控制台�
 | GM 命令 | 说明 |
 | --- | --- |
 | `.character level 60` | 修改角色等级为60级 |
-| `.damage 999` | 对目标造成999点伤害 |
+| `.damage 999` | 对选中的目标造成999点伤害 |
 | `.modify speed 10` | 加速（默认为1，修改范围0.1 to 50） |
 | `.additem 19019` | 加风剑（道具列表在上面的表格里有） |
 | `.gm fly on` | 开启飞行模式 |
 | `.cheat god on` | 开启无敌模式(不受伤害) |
+| `.cheat god on` | 开启无敌模式(不受伤害) |
+| `.modify money 100000000` | 给选中的玩家加1万金 |
+
 
 
 参考资料：
