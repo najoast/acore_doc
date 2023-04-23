@@ -14,7 +14,7 @@
 7. [Boost](https://www.boost.org/users/download/)
 
 # 编译
-1. 拉代码 (https://github.com/azerothcore/azerothcore-wotlk)
+1. 拉代码 (https://github.com/azerothcore/azerothcore-wotlk.git)
 2. 使用 CMake 生成 Visual Studio 解决方案
 3. 使用VS编译代码
 
