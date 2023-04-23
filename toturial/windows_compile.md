@@ -11,7 +11,7 @@
 4. [HeidiSQL](https://www.heidisql.com/download.php)
 5. [CMake](https://cmake.org/download/)
 6. [OpenSSL](http://www.slproweb.com/products/Win32OpenSSL.html)
-7. [Boost](https://www.boost.org/users/download/)
+7. [Boost](https://sourceforge.net/projects/boost/files/boost-binaries/1.81.0/boost_1_81_0-msvc-14.3-64.exe/download)
 
 # 编译
 1. 拉代码 (https://github.com/azerothcore/azerothcore-wotlk.git)
