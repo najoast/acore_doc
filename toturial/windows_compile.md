@@ -31,9 +31,9 @@
 # 4 准备运行环境
 1. 拷贝 `C:\Program Files\MySQL\MySQL Server 8.0\bin\` 里的 `libmysql.dll` 到编译输出目录。
 2. 打开 boost bin 目录，默认为 `C:\local\boost_1_81_0\bin`，在其中拷贝以下 dll 文件到编译输出目录
-	1. `legacy.dll`
-	2. `libcrypto-3-x64.dll`
-	3. `libssl-3-x64.dll`
+	* `legacy.dll`
+	* `libcrypto-3-x64.dll`
+	* `libssl-3-x64.dll`
 3. 在 `configs` 目录下创建 `worldserver.conf` 和 `authserver.conf` 文件，可以直接去掉 `.dist` 后缀。
 4. 下载 [data.zip](https://github.com/wowgaming/client-data/releases/) 数据包并解压到 `data` 目录
 4. 数据库初始化
