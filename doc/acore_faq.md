@@ -2,7 +2,7 @@
 
 ## 编译问题
 
-### 编译机器人MOD时报错：`错误	C2039	"type": 不是 "LFGDungeonEntry" 的成员`
+### 编译机器人MOD时报错：`错误 C2039 "type": 不是 "LFGDungeonEntry" 的成员`
 * 原因：最近机器人MOD使用的 azerothcore 代码更新了，但机器人的代码没有同步更新。
 * 修复：等机器人MOD更新代码即可。目前已有人提交了PR，等待作者合并即可。
 
