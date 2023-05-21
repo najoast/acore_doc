@@ -33,21 +33,26 @@ docker-compose up -d
 ```
 
 # 外网连接数据库
-创建一个允许外网连接的数据库用户
-```sql
-DROP USER IF EXISTS 'acore'@'%';
-CREATE USER 'acore'@'%' IDENTIFIED BY 'acore' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0;
-GRANT ALL PRIVILEGES ON * . * TO 'acore'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `acore_world` . * TO 'acore'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `acore_characters` . * TO 'acore'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `acore_auth` . * TO 'acore'@'%' WITH GRANT OPTION;
-```
+* IP: 服务器外网IP
+* 端口: 63306
+* 用户名: root
+* 密码: password
 
 # 不开新数据库账号，直接在终端里修改数据库的方法
 1. 进入服务器终端，输入 `ifconfig` 查看服务器外网IP地址，记下来。（也可以在服务器管理控制台查看）
 2. 运行 `docker exec -it acore-docker-master-ac-database-1 bash` 命令，进入数据库容器。
 3. 运行 `mysql -h127.0.0.1 -uroot -ppassword -e "update acore_auth.realmlist set address='123.123.123.123' where id=1"` 命令，将数据库中的外网地址改为服务器外网地址。（把上述命令里的123.123.123.123改为你的外网地址）
 4. 运行 `exit` 命令退出数据库容器。
-5. 服务器放开 `3724` 和 `8085` 端口的防火墙，这个不用在终端上操作，服务器管理控制台就可以。
 
-这样就可以了，把客户端的 `realmlist.wtf` 改成服务器外网地址就可以连上了。
+# 服务器开放端口
+* 63306: MySQL 端口
+* 3724: 认证服务器端口
+* 8085: 世界服务器端口
+
+注意在服务器上，开放端口可能有三个地方要改：
+1. Linux 本身的防火墙，可以搜一下自己使用的Linux系统怎么开放端口。
+2. 宝塔面板的防火墙，进入宝塔面板，点击安全，然后点击防火墙，然后点击添加规则，添加上述三个端口。
+3. 云服务器的安全组，进入云服务器管理控制台，点击安全组，然后点击配置规则，添加上述三个端口。
+
+# 客户端修改
+把客户端的 `realmlist.wtf` 改成服务器外网地址就可以连上了。
