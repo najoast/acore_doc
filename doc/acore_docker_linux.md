@@ -16,7 +16,8 @@ systemctl restart docker
 
 # 安装 docker-compose
 ```
-wget https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose
+wget https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-Linux-x86_64
+mv ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 chmod 755 /usr/local/bin/docker-compose
 ```
 
