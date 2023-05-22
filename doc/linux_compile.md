@@ -79,10 +79,36 @@ sudo ufw allow 3306
 ## 6 启动服务器
 ```bash
 cd ~/azeroth-server/bin
-# 以 nohup 方式启动，并把日志输出到 ${进程名}.log 文件里
-nohup ./authserver > authserver.log 2>&1 &
-nohup ./worldserver > worldserver.log 2>&1 &
 ```
+
+
+```bash
+# 1. 以 nohup 方式启动，标准输出和错误输出都重定向到 /dev/null
+# 2. 启动前检查是否有 Auth.log/DBErrors.log/Server.log，如果有先备份，格式为 log/YYMMDD_HHMMSS/原文件名.log
+function backupLog() {
+	# 把log/YYMMDD_HHMMSS目录名存到一个变量里
+	dirName=log/`date +%y%m%d_%H%M%S`
+	# 判断 dirName 目录是否存在，不存在则创建
+	if [ ! -d $dirName ]; then
+		mkdir -p $dirName
+	fi
+	# 判断 $1.log 是否存在，存在则备份
+	if [ -f $1.log ]; then
+		mv $1.log $dirName/$1.log
+	fi
+}
+backupLog Auth
+backupLog DBErrors
+backupLog Server
+
+# 启动服务器
+function launch() {
+	nohup ./$1 > /dev/null 2>&1 &
+}
+launch authserver
+launch worldserver
+```
+
 为了方便，可以把上面两条命令写到一个脚本里，比如 `~/azeroth-server/bin/start.sh`，然后执行 `chmod +x ~/azeroth-server/bin/start.sh`，这样就可以通过 `~/azeroth-server/bin/start.sh` 来启动服务器了。
 
 Ubuntu 防火墙打开3724和8085端口
