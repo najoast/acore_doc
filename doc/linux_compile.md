@@ -57,6 +57,11 @@ GRANT ALL PRIVILEGES ON `acore_auth` . * TO 'acore'@'%' WITH GRANT OPTION;
 * 修改 `mysqld.cnf` 文件，把 `bind-address` 的值由 `127.0.0.1` 改成 `0.0.0.0`
 * 在终端输入 `sudo systemctl restart mysql` 重启MySQL服务
 
+4. Ubuntu 防火墙打开3306端口
+```bash
+sudo ufw allow 3306
+```
+
 > [这篇文章](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)讲了怎么样完整的初始化MySQL，如果是服务器，建议按照这篇文章的步骤来初始化MySQL，可以增强安全性。
 
 ## 5 [网络设置](https://www.azerothcore.org/wiki/networking)
@@ -75,6 +80,12 @@ nohup ./authserver > authserver.log 2>&1 &
 nohup ./worldserver > worldserver.log 2>&1 &
 ```
 为了方便，可以把上面两条命令写到一个脚本里，比如 `~/azeroth-server/bin/start.sh`，然后执行 `chmod +x ~/azeroth-server/bin/start.sh`，这样就可以通过 `~/azeroth-server/bin/start.sh` 来启动服务器了。
+
+Ubuntu 防火墙打开3724和8085端口
+```bash
+sudo ufw allow 3724
+sudo ufw allow 8085
+```
 
 ## 7 关闭服务器
 ```bash
