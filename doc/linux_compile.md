@@ -1,5 +1,9 @@
 # Ubuntu 编译 AzerothCore
 
+> 注：
+> Ubuntu 版本必须 >= 22.04
+> 旧版本系统会遇到大量软件版本过旧的问题，需要自己手动升级，不建议使用。
+
 ## 1 [安装所需软件](https://www.azerothcore.org/wiki/linux-requirements)
 
 ```bash
