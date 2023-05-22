@@ -81,7 +81,6 @@ sudo ufw allow 3306
 cd ~/azeroth-server/bin
 ```
 
-
 ```bash
 # 1. 以 nohup 方式启动，标准输出和错误输出都重定向到 /dev/null
 # 2. 启动前检查是否有 Auth.log/DBErrors.log/Server.log，如果有先备份，格式为 log/YYMMDD_HHMMSS/原文件名.log
@@ -124,3 +123,32 @@ pkill worldserver
 ```
 
 为了方便，可以把上面两条命令写到一个脚本里，比如 `~/azeroth-server/bin/stop.sh`，然后执行 `chmod +x ~/azeroth-server/bin/stop.sh`，这样就可以通过 `~/azeroth-server/bin/stop.sh` 来关闭服务器了。
+
+# screen 方式启动服务器
+```bash
+# 安装 screen
+sudo apt install screen
+
+# 创建 authserver screen 会话
+screen -S authserver
+# 启动 authserver
+cd ~/azeroth-server/bin
+./authserver
+# 按 Ctrl+A Ctrl+D 退出 screen 会话
+
+# 创建 worldserver screen 会话
+screen -S worldserver
+# 启动 worldserver
+cd ~/azeroth-server/bin
+./worldserver
+# 按 Ctrl+A Ctrl+D 退出 screen 会话
+
+# 查看 screen 会话
+screen -ls
+
+# 进入 screen 会话
+screen -r authserver
+screen -r worldserver
+```
+
+参考文档：https://linuxize.com/post/how-to-use-linux-screen/
