@@ -52,6 +52,11 @@ GRANT ALL PRIVILEGES ON `acore_auth` . * TO 'acore'@'%' WITH GRANT OPTION;
 ```
 > 注：如果执行过 `sudo mysql_secure_installation`，并且安装了 `validate_password` 插件，那么创建用户时需要设置一个复杂的密码，否则会报错。可以在[这里](https://stackoverflow.com/questions/36301100/how-do-i-turn-off-the-mysql-password-validation)找到关闭 `validate_password` 插件的方法。
 
+3. [允许外网访问MySQL服务器](https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql)
+* 使用宝塔文件浏览器，进入 `/etc/mysql/mysql.conf.d` 目录
+* 修改 `mysqld.cnf` 文件，把 `bind-address` 的值由 `127.0.0.1` 改成 `0.0.0.0`
+* 在终端输入 `sudo systemctl restart mysql` 重启MySQL服务
+
 > [这篇文章](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)讲了怎么样完整的初始化MySQL，如果是服务器，建议按照这篇文章的步骤来初始化MySQL，可以增强安全性。
 
 ## 5 [网络设置](https://www.azerothcore.org/wiki/networking)
