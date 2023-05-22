@@ -66,7 +66,7 @@ nohup ./worldserver > worldserver.log 2>&1 &
 ```
 为了方便，可以把上面两条命令写到一个脚本里，比如 `~/azeroth-server/bin/start.sh`，然后执行 `chmod +x ~/azeroth-server/bin/start.sh`，这样就可以通过 `~/azeroth-server/bin/start.sh` 来启动服务器了。
 
-## 6 关闭服务器
+## 7 关闭服务器
 ```bash
 pkill authserver
 pkill worldserver
