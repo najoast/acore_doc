@@ -56,3 +56,6 @@ docker-compose up -d
 
 # 客户端修改
 把客户端的 `realmlist.wtf` 改成服务器外网地址就可以连上了。
+
+# 如何停止服务器
+进入 acore-docker 目录，运行 `docker-compose stop` 命令。

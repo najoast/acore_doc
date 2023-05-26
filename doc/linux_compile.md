@@ -20,8 +20,7 @@ cd azerothcore-wotlk
 mkdir build
 cd build
 cmake ../ -DCMAKE_INSTALL_PREFIX=$HOME/azeroth-server/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
-nproc --all # 检查CPU有几个核心
-make -j 4 # 把4改成你实际的核心数，这样能最大化利用CPU的多核优势，加快编译速度
+make -j $(nproc --all) # 编译
 make install # 安装
 ```
 
