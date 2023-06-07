@@ -402,6 +402,24 @@ Rate.Auction.Cut     = 1
 | `LevelReq.Auction` | 1 | 拍卖行的等级要求 |
 | `LevelReq.Mail` | 1 | 邮件的等级要求 |
 
+# 阵营之间的互动
+
+| 配置项 | 功能 | 默认 |
+| --- | --- | --- |
+| `AllowTwoSide.Accounts` | 允许在同一账号下创建两个阵营的角色 | 打开 |
+| `AllowTwoSide.Interaction.Calendar` | 允许两个阵营之间的日历邀请 | 关闭 |
+| `AllowTwoSide.Interaction.Chat` | 允许两个阵营之间的聊天 | 关闭 |
+| `AllowTwoSide.Interaction.Emote` | 允许两个阵营之间的发表情 | 关闭 |
+| `AllowTwoSide.Interaction.Channel` | 允许两个阵营之间的频道聊天 | 关闭 |
+| `AllowTwoSide.Interaction.Group` | 允许两个阵营之间的组队 | 关闭 |
+| `AllowTwoSide.Interaction.Guild` | 允许两个阵营之间互相加公会 | 关闭 |
+| `AllowTwoSide.Interaction.Auction` | 允许两个阵营之间的拍卖行交易 | 关闭 |
+| `AllowTwoSide.Interaction.Mail` | 允许两个阵营互发邮件 | 关闭 |
+| `AllowTwoSide.WhoList` | 允许在/who列表中看到两个阵营的玩家 | 关闭 |
+| `AllowTwoSide.AddFriend` | 允许两个阵营之间互加好友 | 关闭 |
+| `AllowTwoSide.Trade` | 允许两个阵营之间交易 | 关闭 |
+| `TalentsInspecting` | 允许查看对方阵营的天赋 | 打开 |
+
 # 其他配置
 
 PlayerStart.AllReputation = 0
